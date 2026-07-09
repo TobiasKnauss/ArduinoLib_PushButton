@@ -1,12 +1,12 @@
 #######################################
-# Syntax Coloring Map For PushButton
+# Syntax Coloring Map For DigitalInputWithDelay
 #######################################
 
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
 
-InputWithDelay	KEYWORD1
+DigitalInputWithDelay	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)

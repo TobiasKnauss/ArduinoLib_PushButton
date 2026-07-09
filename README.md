@@ -1,1 +1,1 @@
-# ArduinoLib_InputWithDelay
+# ArduinoLib_DigitalInputWithDelay

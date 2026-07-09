@@ -1,41 +1,41 @@
-#ifndef InputWithDelay_h
-#define InputWithDelay_h
+#ifndef DigitalInputWithDelay_h
+#define DigitalInputWithDelay_h
 
-#include "Arduino.h"
+#include <Arduino.h>
+
+#include <SignalWithDelay.h>
 
 //--------------------------------------------------------------------
-// An input with debouncing delays.
+// A digital input with debouncing delays.
 //--------------------------------------------------------------------
-class InputWithDelay
+class DigitalInputWithDelay
 {
 //==================== Fields ====================
 
 private:
-  uint8_t  m_DI;
-  uint16_t m_DelayForOn_Milliseconds;
-  uint16_t m_DelayForOff_Milliseconds;
-
-  bool          m_State;
-  bool          m_DigitalRead_LastState;
-  unsigned long m_StartOfStateChange;
-
+  uint8_t m_DI;
+  SignalWithDelay* m_pSignal;
 
 //==================== Constructors ====================
 
 public:
-  InputWithDelay (uint8_t  i_DI,
-                  bool     i_UseInternalPullup,
-                  uint16_t i_DelayForOn_Milliseconds,
-                  uint16_t i_DelayForOff_Milliseconds);
+  DigitalInputWithDelay ( uint8_t  i_DI,
+                          bool     i_UseInternalPullup,
+                          uint16_t i_DelayForOn_Milliseconds,
+                          uint16_t i_DelayForOff_Milliseconds);
+
+  ~DigitalInputWithDelay ();
+
+//==================== Public Methods ====================
 
   //--------------------------------------------------------------------
-  // Read the state of the input.
+  // Read the state of the digital input.
   // This method must be called cyclically.
   //--------------------------------------------------------------------
   bool Read ();
 
   //--------------------------------------------------------------------
-  // Clear all cached states and timestamps of the input.
+  // Clear all cached states and timestamps of the digital input.
   //--------------------------------------------------------------------
   void Reset ();
 };

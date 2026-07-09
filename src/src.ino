@@ -1,6 +1,6 @@
-#include "InputWithDelay.h"
+#include "DigitalInputWithDelay.h"
 
-InputWithDelay input = InputWithDelay (1, true, 20, 10);
+DigitalInputWithDelay input = DigitalInputWithDelay (1, true, 20, 10);
 
 void setup ()
 {
