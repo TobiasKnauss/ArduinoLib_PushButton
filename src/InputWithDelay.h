@@ -1,12 +1,12 @@
-#ifndef PushButton_h
-#define PushButton_h
+#ifndef InputWithDelay_h
+#define InputWithDelay_h
 
 #include "Arduino.h"
 
 //--------------------------------------------------------------------
-// A push button with debouncing delays.
+// An input with debouncing delays.
 //--------------------------------------------------------------------
-class PushButton
+class InputWithDelay
 {
 //==================== Fields ====================
 
@@ -23,19 +23,19 @@ private:
 //==================== Constructors ====================
 
 public:
-  PushButton (uint8_t  i_DI,
-              bool     i_UseInternalPullup,
-              uint16_t i_DelayForOn_Milliseconds,
-              uint16_t i_DelayForOff_Milliseconds);
+  InputWithDelay (uint8_t  i_DI,
+                  bool     i_UseInternalPullup,
+                  uint16_t i_DelayForOn_Milliseconds,
+                  uint16_t i_DelayForOff_Milliseconds);
 
   //--------------------------------------------------------------------
-  // Read the state of the push button.
+  // Read the state of the input.
   // This method must be called cyclically.
   //--------------------------------------------------------------------
   bool Read ();
 
   //--------------------------------------------------------------------
-  // Clear all cached states and timestamps of the push button.
+  // Clear all cached states and timestamps of the input.
   //--------------------------------------------------------------------
   void Reset ();
 };

@@ -1,10 +1,10 @@
-#include "PushButton.h"
+#include "InputWithDelay.h"
 
 //--------------------------------------------------------------------
-PushButton::PushButton (uint8_t  i_DI,
-                        bool     i_UseInternalPullup,
-                        uint16_t i_DelayForOn_Milliseconds,
-                        uint16_t i_DelayForOff_Milliseconds)
+InputWithDelay::InputWithDelay (uint8_t  i_DI,
+                                bool     i_UseInternalPullup,
+                                uint16_t i_DelayForOn_Milliseconds,
+                                uint16_t i_DelayForOff_Milliseconds)
 {
   m_DI                       = i_DI;
   m_DelayForOn_Milliseconds  = i_DelayForOn_Milliseconds;
@@ -17,7 +17,7 @@ PushButton::PushButton (uint8_t  i_DI,
 }
 
 //--------------------------------------------------------------------
-bool PushButton::Read ()
+bool InputWithDelay::Read ()
 {
   bool state = digitalRead (m_DI);
 
@@ -37,7 +37,7 @@ bool PushButton::Read ()
 }
 
 //--------------------------------------------------------------------
-void PushButton::Reset ()
+void InputWithDelay::Reset ()
 {
   m_State                 = LOW;
   m_DigitalRead_LastState = LOW;
