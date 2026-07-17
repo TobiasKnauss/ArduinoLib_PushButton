@@ -3,11 +3,12 @@
 //--------------------------------------------------------------------
 DigitalInputWithDelay::DigitalInputWithDelay (uint8_t  i_DI,
                                               bool     i_UseInternalPullup,
+                                              bool     i_LowActive,
                                               uint16_t i_DelayForOn_Milliseconds,
                                               uint16_t i_DelayForOff_Milliseconds)
 {
   m_DI = i_DI;
-  m_pSignal = new SignalWithDelay (i_DelayForOn_Milliseconds, i_DelayForOff_Milliseconds);
+  m_pSignal = new SignalWithDelay (i_LowActive, i_DelayForOn_Milliseconds, i_DelayForOff_Milliseconds);
 
   pinMode (i_DI, INPUT);
   digitalWrite (i_DI, i_UseInternalPullup);

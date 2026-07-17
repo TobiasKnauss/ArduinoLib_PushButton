@@ -21,6 +21,7 @@ private:
 public:
   DigitalInputWithDelay ( uint8_t  i_DI,
                           bool     i_UseInternalPullup,
+                          bool     i_LowActive,
                           uint16_t i_DelayForOn_Milliseconds,
                           uint16_t i_DelayForOff_Milliseconds);
 
